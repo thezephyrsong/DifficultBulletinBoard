@@ -1,7 +1,7 @@
 ## Interface: 11200
 ## Title: |cffaaa7ccDifficult|cffffffffBulletinBoard
 ## Author: akzkak, DeterminedPanda
-## Notes: Group finder based on chat messages
+## Notes: Group finder based on chat messages. CJK font support (place WarSansTT-Bliz-500.ttf in the font/ folder).
 ## Version: 2.40
 ## SavedVariablesPerCharacter: DBB2_Config
 
@@ -29,6 +29,9 @@ api\tooltip.lua
 api\gui_schema.lua
 api\config_schema.lua
 api\config_widgets.lua
+api\dict_cn_phrases.lua
+api\dict_cn_misc.lua
+api\translate_cn.lua
 
 modules\version_check.lua
 modules\categories.lua

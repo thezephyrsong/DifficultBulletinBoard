@@ -126,18 +126,52 @@ end
 -- Sets the font string text and messageBtn width. Returns true if truncated.
 -- @param row (Frame) The message row frame
 -- @param availableWidth (number) Available pixel width
+-- Returns the byte length of the UTF-8 character starting at position i in str.
+-- Handles 1-byte (ASCII), 2-byte, 3-byte (CJK), and 4-byte sequences.
+local function UTF8CharLen(str, i)
+  local b = string.byte(str, i)
+  if not b then return 1 end
+  if b < 0x80 then return 1
+  elseif b < 0xC0 then return 1  -- continuation byte (shouldn't start here)
+  elseif b < 0xE0 then return 2
+  elseif b < 0xF0 then return 3
+  else return 4
+  end
+end
+
+-- Advance pos forward by one complete UTF-8 character.
+local function UTF8NextCharPos(str, pos)
+  return pos + UTF8CharLen(str, pos)
+end
+
 function DBB2.schema.TruncateMessage(row, availableWidth)
   row.message:SetWidth(availableWidth)
   row.messageBtn:SetWidth(availableWidth)
   row.message:SetText(row._fullMessage)
   row._isTruncated = false
-  
-  if row.message:GetStringWidth() > availableWidth and string.len(row._fullMessage) > 3 then
-    -- Binary search for the right truncation point instead of char-by-char
-    local lo, hi = 3, string.len(row._fullMessage)
+
+  local fullMsg = row._fullMessage
+  local msgLen  = string.len(fullMsg)
+
+  if row.message:GetStringWidth() > availableWidth and msgLen > 3 then
+    -- Build a table of valid UTF-8 character boundary byte positions.
+    -- This ensures binary search never splits a multi-byte CJK sequence.
+    local boundaries = {}
+    local pos = 1
+    while pos <= msgLen do
+      table.insert(boundaries, pos)
+      pos = UTF8NextCharPos(fullMsg, pos)
+    end
+
+    -- Binary search over character boundaries (not raw bytes).
+    local lo, hi = 1, table.getn(boundaries)
+    -- Clamp lo to at least the 3rd character boundary if available.
+    if lo < 3 and table.getn(boundaries) >= 3 then lo = 3 end
+
     while lo < hi do
       local mid = math.floor((lo + hi + 1) / 2)
-      local candidate = string.sub(row._fullMessage, 1, mid)
+      local byteEnd = boundaries[mid] - 1
+      local candidate = string.sub(fullMsg, 1, byteEnd)
       candidate = string.gsub(candidate, "%s+$", "")
       row.message:SetText(candidate .. "\226\128\166")
       if row.message:GetStringWidth() <= availableWidth then
@@ -146,7 +180,9 @@ function DBB2.schema.TruncateMessage(row, availableWidth)
         hi = mid - 1
       end
     end
-    local truncated = string.sub(row._fullMessage, 1, lo)
+
+    local byteEnd  = boundaries[lo] - 1
+    local truncated = string.sub(fullMsg, 1, byteEnd)
     truncated = string.gsub(truncated, "%s+$", "")
     row.message:SetText(truncated .. "\226\128\166")
     row._isTruncated = true
@@ -338,7 +374,7 @@ function DBB2.schema.CreateMessageRow(name, parent)
   row.charNameBtn:SetFrameLevel(row:GetFrameLevel() + 5)
   
   row.charName = row.charNameBtn:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-  row.charName:SetFont("Fonts\\FRIZQT__.TTF", DBB2:GetFontSize(10))
+  row.charName:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", DBB2:GetFontSize(10))
   row.charName:SetPoint("LEFT", 0, 0)
   row.charName:SetWidth(S.CHARNAME_WIDTH)
   row.charName:SetJustifyH("LEFT")
@@ -385,7 +421,7 @@ function DBB2.schema.CreateMessageRow(name, parent)
   row.messageBtn.isHovered = false
   
   row.message = row.messageBtn:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-  row.message:SetFont("Fonts\\FRIZQT__.TTF", DBB2:GetFontSize(10))
+  row.message:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", DBB2:GetFontSize(10))
   row.message:SetPoint("LEFT", 0, 0)
   row.message:SetPoint("RIGHT", 0, 0)
   row.message:SetJustifyH("LEFT")
@@ -571,7 +607,7 @@ function DBB2.schema.CreateFilterInput(name, parent)
   f:SetAutoFocus(false)
   f:EnableMouse(true)
   f:SetTextInsets(DBB2:ScaleSize(5), DBB2:ScaleSize(5), DBB2:ScaleSize(5), DBB2:ScaleSize(5))
-  f:SetFont("Fonts\\FRIZQT__.TTF", DBB2:GetFontSize(10))
+  f:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", DBB2:GetFontSize(10))
   f:SetJustifyH("LEFT")
   
   DBB2:CreateBackdrop(f, nil, nil, nil, true)
@@ -592,7 +628,7 @@ function DBB2.schema.CreateFilterInput(name, parent)
   
   -- Placeholder text
   f.placeholder = f:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-  f.placeholder:SetFont("Fonts\\FRIZQT__.TTF", DBB2:GetFontSize(10))
+  f.placeholder:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", DBB2:GetFontSize(10))
   f.placeholder:SetPoint("LEFT", 6, 0)
   f.placeholder:SetText("Filter messages... (e.g. bwl,zg,mc)")
   f.placeholder:SetTextColor(0.4, 0.4, 0.4, 1)
@@ -666,7 +702,7 @@ function DBB2.schema.CreateButton(name, parent, text)
   DBB2:CreateBackdrop(f)
   
   f.text = f:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-  f.text:SetFont("Fonts\\FRIZQT__.TTF", DBB2:GetFontSize(11))
+  f.text:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", DBB2:GetFontSize(11))
   f.text:SetPoint("CENTER", 0, 0)
   f.text:SetText(text or "Button")
   f.text:SetTextColor(1, 1, 1, 1)
@@ -774,7 +810,7 @@ function DBB2.schema.CreateCheckBox(name, parent, label, fontSize)
   
   if label then
     f.label = f:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    f.label:SetFont("Fonts\\FRIZQT__.TTF", DBB2:GetFontSize(fontSize))
+    f.label:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", DBB2:GetFontSize(fontSize))
     f.label:SetPoint("LEFT", f, "RIGHT", DBB2:ScaleSize(8), 0)
     f.label:SetText(label)
     f.label:SetTextColor(1, 1, 1, 1)
@@ -823,7 +859,7 @@ function DBB2.schema.CreateEditBox(name, parent)
   f:SetAutoFocus(false)
   f:EnableMouse(true)
   f:SetTextInsets(DBB2:ScaleSize(5), DBB2:ScaleSize(5), DBB2:ScaleSize(5), DBB2:ScaleSize(5))
-  f:SetFont("Fonts\\FRIZQT__.TTF", DBB2:GetFontSize(10))
+  f:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", DBB2:GetFontSize(10))
   f:SetJustifyH("LEFT")
   
   DBB2:CreateBackdrop(f, nil, nil, nil, true)
@@ -861,7 +897,7 @@ function DBB2.schema.CreateDropDown(name, parent)
   DBB2:CreateBackdrop(f)
   
   f.text = f:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-  f.text:SetFont("Fonts\\FRIZQT__.TTF", DBB2:GetFontSize(11))
+  f.text:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", DBB2:GetFontSize(11))
   f.text:SetPoint("LEFT", 5, 0)
   f.text:SetPoint("RIGHT", -DBB2:ScaleSize(20), 0)
   f.text:SetJustifyH("LEFT")
@@ -869,7 +905,7 @@ function DBB2.schema.CreateDropDown(name, parent)
   f.text:SetTextColor(1, 1, 1, 1)
   
   f.arrow = f:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-  f.arrow:SetFont("Fonts\\FRIZQT__.TTF", DBB2:GetFontSize(11))
+  f.arrow:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", DBB2:GetFontSize(11))
   f.arrow:SetPoint("RIGHT", -5, 0)
   f.arrow:SetText("v")
   local hr, hg, hb = DBB2:GetHighlightColor()
@@ -898,7 +934,7 @@ end
 -- @return (FontString) The created label font string
 function DBB2.schema.CreateLabel(parent, text, size)
   local f = parent:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-  f:SetFont("Fonts\\FRIZQT__.TTF", DBB2:GetFontSize(size or 11))
+  f:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", DBB2:GetFontSize(size or 11))
   f:SetText(text or "")
   f:SetTextColor(1, 1, 1, 1)
   f:SetJustifyH("LEFT")
@@ -932,13 +968,13 @@ function DBB2.schema.CreateSlider(name, parent, label, minVal, maxVal, step, fon
   container:SetWidth(DBB2:ScaleSize(200))
   
   container.label = container:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-  container.label:SetFont("Fonts\\FRIZQT__.TTF", DBB2:GetFontSize(fontSize))
+  container.label:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", DBB2:GetFontSize(fontSize))
   container.label:SetPoint("TOPLEFT", 0, 0)
   container.label:SetText(label or "Slider")
   container.label:SetTextColor(1, 1, 1, 1)
   
   container.value = container:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-  container.value:SetFont("Fonts\\FRIZQT__.TTF", DBB2:GetFontSize(fontSize))
+  container.value:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", DBB2:GetFontSize(fontSize))
   container.value:SetPoint("TOPRIGHT", 0, 0)
   container.value:SetText(minVal)
   local hr, hg, hb = DBB2:GetHighlightColor()
@@ -1357,7 +1393,7 @@ function DBB2.schema.CreateColorPicker(name, parent, label, fontSize)
   container:SetWidth(DBB2:ScaleSize(200))
   
   container.label = container:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-  container.label:SetFont("Fonts\\FRIZQT__.TTF", DBB2:GetFontSize(fontSize))
+  container.label:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", DBB2:GetFontSize(fontSize))
   container.label:SetPoint("LEFT", 0, 0)
   container.label:SetText(label or "Color")
   container.label:SetTextColor(1, 1, 1, 1)

@@ -50,7 +50,7 @@ function CreateConfigInput(name, parent)
   f:SetJustifyH("LEFT")
   
   -- Set font directly with explicit bright white color
-  f:SetFont("Fonts\\FRIZQT__.TTF", DBB2:GetFontSize(FONT_SIZE_INPUT))
+  f:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", DBB2:GetFontSize(FONT_SIZE_INPUT))
   f:SetTextColor(1, 1, 1, 1)
   
   -- Border textures only (no background) - matches slider box style
@@ -581,7 +581,7 @@ function RenderEditBox(parent, item, x, y)
   
   if item.placeholder then
     editbox.placeholder = editbox:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    editbox.placeholder:SetFont("Fonts\\FRIZQT__.TTF", DBB2:GetFontSize(FONT_SIZE_INPUT))
+    editbox.placeholder:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", DBB2:GetFontSize(FONT_SIZE_INPUT))
     editbox.placeholder:SetPoint("LEFT", DBB2:ScaleSize(6), 0)
     editbox.placeholder:SetText(item.placeholder)
     editbox.placeholder:SetTextColor(0.4, 0.4, 0.4, 1)

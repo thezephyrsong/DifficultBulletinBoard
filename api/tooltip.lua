@@ -93,7 +93,7 @@ function DBB2.api.ShowTooltip(owner, anchor, lines)
     end
     
     local line = tooltip.lines[i]
-    line:SetFont("Fonts\\FRIZQT__.TTF", fontSize)
+    line:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", fontSize)
     line:SetWidth(0)
     line:SetText(text or "")
     line:SetTextColor(r, g, b, 1)
@@ -238,7 +238,7 @@ function DBB2.api.ShowMessageTooltip(owner, sender, message)
   
   -- Title (sender)
   local titleLine = tooltip.lines[1]
-  titleLine:SetFont("Fonts\\FRIZQT__.TTF", fontSize)
+  titleLine:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", fontSize)
   titleLine:SetText(sender)
   titleLine:SetTextColor(hr, hg, hb, 1)
   titleLine:ClearAllPoints()
@@ -247,7 +247,7 @@ function DBB2.api.ShowMessageTooltip(owner, sender, message)
   
   -- Message
   local msgLine = tooltip.lines[2]
-  msgLine:SetFont("Fonts\\FRIZQT__.TTF", fontSize)
+  msgLine:SetFont("Interface\\AddOns\\DifficultBulletinBoard\\font\\WarSansTT-Bliz-500.ttf", fontSize)
   msgLine:SetWidth(maxWidth)
   msgLine:SetText(message)
   msgLine:SetTextColor(0.9, 0.9, 0.9, 1)

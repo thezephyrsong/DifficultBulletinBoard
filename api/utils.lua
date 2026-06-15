@@ -171,3 +171,49 @@ function DBB2.api.FormatMessageTime(timestamp)
     return date("%H:%M:%S", timestamp), false
   end
 end
+
+-- =====================================================
+-- CJK / UNICODE UTILITIES
+-- =====================================================
+-- Helpers for detecting and handling Chinese/Japanese/Korean text.
+
+-- [ ContainsCJK ]
+-- Returns true if the string contains at least one CJK Unified Ideograph
+-- (U+4E00–U+9FFF) encoded as UTF-8.
+-- Used to decide whether a message needs the CJK font path.
+-- @param str  [string]  UTF-8 encoded string to test
+-- @return     [boolean]
+function DBB2.api.ContainsCJK(str)
+  if not str or str == "" then return false end
+  local i = 1
+  local len = string.len(str)
+  while i <= len do
+    local b1 = string.byte(str, i)
+    -- 3-byte UTF-8 sequence: 0xE0–0xEF
+    if b1 and b1 >= 0xE0 and b1 < 0xF0 then
+      local b2 = string.byte(str, i + 1) or 0
+      local b3 = string.byte(str, i + 2) or 0
+      -- Decode the codepoint
+      local cp = ((b1 - 0xE0) * 0x1000)
+               + ((b2 - 0x80) * 0x40)
+               + (b3 - 0x80)
+      -- CJK Unified Ideographs: U+4E00–U+9FFF
+      -- CJK Extension A:        U+3400–U+4DBF
+      -- CJK Compatibility:      U+F900–U+FAFF
+      if (cp >= 0x4E00 and cp <= 0x9FFF)
+      or (cp >= 0x3400 and cp <= 0x4DBF)
+      or (cp >= 0xF900 and cp <= 0xFAFF) then
+        return true
+      end
+      i = i + 3
+    elseif b1 and b1 >= 0x80 then
+      -- 2-byte or 4-byte sequence — skip correctly
+      if b1 < 0xE0 then i = i + 2
+      else i = i + 4
+      end
+    else
+      i = i + 1
+    end
+  end
+  return false
+end

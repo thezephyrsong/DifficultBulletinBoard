@@ -269,6 +269,10 @@ function DBB2.api.AddMessage(message, sender, channel, msgType)
   -- Pass msgType so system messages only trigger hardcore notifications
   DBB2.api.CheckAndNotify(message, sender, msgType)
   
+  -- Translate Chinese messages to English before storing.
+  -- TranslateCN is a no-op when the message contains no CJK characters.
+  message = DBB2.api.TranslateCN(message)
+
   -- Store message
   table_insert(DBB2.messages, {
     message = message,
