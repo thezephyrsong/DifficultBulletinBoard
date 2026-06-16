@@ -26,10 +26,10 @@ local table_concat  = table.concat
 local function utf8_charlen(str, i)
   local b = string_byte(str, i)
   if not b       then return 1 end
-  if b < 0x80    then return 1 end
-  if b < 0xC0    then return 1 end
-  if b < 0xE0    then return 2 end
-  if b < 0xF0    then return 3 end
+  if b < 128    then return 1 end
+  if b < 192    then return 1 end
+  if b < 224    then return 2 end
+  if b < 240    then return 3 end
   return 4
 end
 

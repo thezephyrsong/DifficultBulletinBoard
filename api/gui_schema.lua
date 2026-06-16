@@ -131,10 +131,10 @@ end
 local function UTF8CharLen(str, i)
   local b = string.byte(str, i)
   if not b then return 1 end
-  if b < 0x80 then return 1
-  elseif b < 0xC0 then return 1  -- continuation byte (shouldn't start here)
-  elseif b < 0xE0 then return 2
-  elseif b < 0xF0 then return 3
+  if b < 128 then return 1
+  elseif b < 192 then return 1  -- continuation byte (shouldn't start here)
+  elseif b < 224 then return 2
+  elseif b < 240 then return 3
   else return 4
   end
 end

@@ -189,26 +189,26 @@ function DBB2.api.ContainsCJK(str)
   local len = string.len(str)
   while i <= len do
     local b1 = string.byte(str, i)
-    -- 3-byte UTF-8 sequence: 0xE0–0xEF
-    if b1 and b1 >= 0xE0 and b1 < 0xF0 then
+    -- 3-byte UTF-8 sequence: 224–239
+    if b1 and b1 >= 224 and b1 < 240 then
       local b2 = string.byte(str, i + 1) or 0
       local b3 = string.byte(str, i + 2) or 0
       -- Decode the codepoint
-      local cp = ((b1 - 0xE0) * 0x1000)
-               + ((b2 - 0x80) * 0x40)
-               + (b3 - 0x80)
+      local cp = ((b1 - 224) * 4096)
+               + ((b2 - 128) * 64)
+               + (b3 - 128)
       -- CJK Unified Ideographs: U+4E00–U+9FFF
       -- CJK Extension A:        U+3400–U+4DBF
       -- CJK Compatibility:      U+F900–U+FAFF
-      if (cp >= 0x4E00 and cp <= 0x9FFF)
-      or (cp >= 0x3400 and cp <= 0x4DBF)
-      or (cp >= 0xF900 and cp <= 0xFAFF) then
+      if (cp >= 19968 and cp <= 40959)
+      or (cp >= 13312 and cp <= 19903)
+      or (cp >= 63744 and cp <= 64255) then
         return true
       end
       i = i + 3
-    elseif b1 and b1 >= 0x80 then
+    elseif b1 and b1 >= 128 then
       -- 2-byte or 4-byte sequence — skip correctly
-      if b1 < 0xE0 then i = i + 2
+      if b1 < 224 then i = i + 2
       else i = i + 4
       end
     else
