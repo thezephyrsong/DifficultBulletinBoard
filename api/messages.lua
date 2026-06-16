@@ -209,7 +209,11 @@ function DBB2.api.AddMessage(message, sender, channel, msgType)
   
   -- Clean up expired messages first
   DBB2.api.RemoveExpiredMessages()
-  
+
+  -- Translate Chinese messages to English before categorisation.
+  -- This ensures CJK messages pass the category filter (which uses English patterns).
+  message = DBB2.api.TranslateCN(message)
+
   -- Categorize twice:
   -- 1) fullCategories respects filter tags and controls what is actually stored/shown
   -- 2) baseCategories ignores filter tags so a newer reworded message can still clear
@@ -268,10 +272,6 @@ function DBB2.api.AddMessage(message, sender, channel, msgType)
   -- Uses DBB2.api.CheckAndNotify from notifications.lua
   -- Pass msgType so system messages only trigger hardcore notifications
   DBB2.api.CheckAndNotify(message, sender, msgType)
-  
-  -- Translate Chinese messages to English before storing.
-  -- TranslateCN is a no-op when the message contains no CJK characters.
-  message = DBB2.api.TranslateCN(message)
 
   -- Store message
   table_insert(DBB2.messages, {
