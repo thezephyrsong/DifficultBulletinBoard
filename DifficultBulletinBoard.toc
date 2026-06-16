@@ -7,14 +7,12 @@
 
 DifficultBulletinBoard.lua
 
--- Environment files (static data, constants, exclusion rules)
 env\defaults.lua
 env\versions.lua
 env\constants.lua
 env\tables.lua
 env\tag_exclusions.lua
 
--- API files
 api\utils.lua
 api\hardcore.lua
 api\channels.lua
