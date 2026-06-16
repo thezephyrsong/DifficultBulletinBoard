@@ -168,3 +168,30 @@ dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "需来个奶",        e
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "需来个DPS",       en = "need a DPS" }
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "有没有T来",       en = "any tanks for" }
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "有没有N来",       en = "any healers for" }
+
+-- Dynamic LFG captures (e.g., "stsm来dps" -> "Strat need dps")
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "来(%d)个", en = "need %1 more" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "来点DPS", en = "need some DPS" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "来个能拉人的", en = "need someone who can summon" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "有没有大佬带", en = "any pros to carry me?" }
+
+-- Specific Custom Instance Callouts
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "新月来人", en = "Crescent Grove LFG" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "翡翠圣地开团", en = "Forming Emerald Sanctum" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "仇恨熔炉速刷", en = "Hateforge Quarry speedrun" }
+
+-- Hardcore specific warnings / requests
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "HC模式注意安全", en = "HC mode, play safe" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "别引怪会害死人", en = "Don't ninja pull, you'll kill us" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "求稳不要求快", en = "Safety first, don't rush" }
+
+-- Item, Crafting & Profession Phrases
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "免费代工", en = "Free crafting (your mats)" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "自带材料", en = "Bring your own mats" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "代工做极品", en = "Crafting high tier gear" }
+
+-- Tactical dungeon / Raid warnings
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "看好拉怪路线", en = "Watch the pull path" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "治疗看好T", en = "Healers focus the Tank" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "DPS别抢仇恨", en = "DPS wait for aggro" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "各就各位", en = "Everyone get in position" }
