@@ -153,3 +153,18 @@ dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "来个N",        en = "
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "来个T",        en = "need a tank" }
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "来个DPS",      en = "need a DPS" }
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "来个奶",       en = "need a healer" }
+
+-- Role or combos
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "来个T或者N",   en = "need tank or healer" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "T或者N",       en = "tank or healer" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "或者",         en = "or" }
+
+-- 需来个 variants
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "需来个DPS或者奶", en = "need DPS or healer" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "需来个T或者奶",   en = "need tank or healer" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "需来个T",         en = "need a tank" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "需来个N",         en = "need a healer" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "需来个奶",        en = "need a healer" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "需来个DPS",       en = "need a DPS" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "有没有T来",       en = "any tanks for" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "有没有N来",       en = "any healers for" }

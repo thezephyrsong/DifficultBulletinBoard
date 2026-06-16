@@ -311,7 +311,7 @@ dict_cn_misc = {
     -- Additional LFG terms
     ["北都"]       = "LBRS",
     ["南都"]       = "UBRS",
-    ["任务队"]     = "quest group",
+    ["任务队"]     = "LFG group",
     ["来个"]       = "need a",
 
     -- Raids (from WoWTranslate glossary)
@@ -1482,4 +1482,36 @@ dict_cn_misc = {
     ["龟速模式"] = "Turtle Mode",
     ["龟龟"] = "turtle server",
     ["龟龟助手"] = "Turtle helper tool",
+
+    -- Additional slang
+    ["黑下"]       = "LBRS",
+    ["黑上"]       = "UBRS",
+    ["或者"]       = "or",
+    ["T或者N"]     = "tank or healer",
+
+    -- Stormwrought Ruins / Turtle WoW dungeons
+    ["风暴废墟"]   = "Stormwrought Ruins",
+    ["风暴城堡"]   = "Stormwrought Ruins",
+    ["城春草木深"] = "City Spring",
+
+    -- LFG phrasing variants
+    ["需来个"]     = "need a",
+    ["需来"]       = "need",
+    ["效率队"]     = "efficiency group",
+    ["全通"]       = "full clear",
+    ["光速"]       = "speed",
+    ["强力队"]     = "strong group",
+    ["有没有T"]    = "any tanks?",
+    ["有没有N"]    = "any healers?",
+
+    -- Seeking / group terms
+    ["寻找"]       = "seeking",
+    ["团体"]       = "group",
+    ["寻求"]       = "looking for",
+    ["征召"]       = "recruiting",
+    ["招人"]       = "recruiting",
+    ["找人"]       = "looking for people",
+    ["找队"]       = "looking for group",
+    ["求组"]       = "LFG",
+    ["求带"]       = "LFB",
 }
