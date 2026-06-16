@@ -1,4 +1,6 @@
-RIP Turtle 2018-2026 🐢  [Ported over to Project Epoch 3.3.5a, enjoy!](https://github.com/akzkak/DifficultBulletinBoard)
+RIP Turtle 2018-2026 🐢  Adding Chinese compatibility for Capybara Paradise 
+<img width="678" height="346" alt="image" src="https://github.com/user-attachments/assets/9471dbc4-2db4-41f1-a828-453c94ab9fb9" />
+
 
 # Difficult Bulletin Board - Addon for Turtle WoW
 
@@ -26,7 +28,7 @@ RIP Turtle 2018-2026 🐢  [Ported over to Project Epoch 3.3.5a, enjoy!](https:/
 ## Installation
 
 1. Download the addon by clicking the link below:
-   - [Download Difficult Bulletin Board](https://github.com/DeterminedPanda/DifficultBulletinBoard/archive/refs/heads/master.zip)
+   - [Download Difficult Bulletin Board](https://github.com/thezephyrsong/DifficultBulletinBoard/archive/refs/heads/master.zip)
 
 2. Unzip the `DifficultBulletinBoard-master.zip` archive.
 
@@ -62,4 +64,4 @@ It’s also a good idea to reset the tags after updating the addon, as I may imp
 
 ## Contact
 
-Have feature suggestions or need further assistance? Feel free to [create an issue](https://github.com/DeterminedPanda/DifficultBulletinBoard/issues) on this repository and I will help you as soon as possible.
+Have feature suggestions or need further assistance? Feel free to [create an issue](https://github.com/thezephyrsong/DifficultBulletinBoard/issues) on this repository and I will help you as soon as possible.
