@@ -249,6 +249,7 @@ dict_cn_misc["时尚币"] = "Fashion Coin"
 dict_cn_misc["龟壳"] = "Turtle-Shell addon manager"
 dict_cn_misc["龟龟助手"] = "Turtle helper tool"
 dict_cn_misc["乌龟服疑难解答"] = "Turtle WoW FAQ"
+dict_cn_misc["外围"] = "outside / perimeter"
 
 -- ============================================================================
 -- Vanilla Dungeons & Raids (A-Z & Abbreviations)

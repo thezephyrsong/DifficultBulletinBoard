@@ -22,6 +22,11 @@ dict_cn_phrases = {
     { cn = "监狱任务队",       en = "Stockades quest group " },
     { cn = "霜鬃谷任务队",     en = "Frostmane Hollow quest group " },
     { cn = "死矿任务队",       en = "Deadmines quest group " },
+    { cn = "祖尔",           en = "ZF " },
+    { cn = "来[nN]和[dD]",   en = "need Healer and DPS " },
+    { cn = "来[tT]和[nN]",   en = "need Tank and Healer " },
+    { cn = "来[tT]和[dD]",   en = "need Tank and DPS " },
+    { cn = "有锤子",         en = "ZF Hammer ready " },
 
     -- ============================================================================
     -- Standalone English / Number Guard Rules (Protects words from corruption)
@@ -130,6 +135,10 @@ dict_cn_phrases = {
     { cn = "强T带队",       en = "strong Tank leading group " },
     { cn = "各种",           en = "all roles " },
     { cn = "新月小树林任务队", en = "Crescent Grove quest group " },
+    { cn = "血色外围任务来人", en = "SM outer quests LFM, " },
+    { cn = "血色外围任务",     en = "SM outer quests " },
+    { cn = "外围任务",         en = "outer quests " },
+    { cn = "一起",             en = "together " },
 
     -- ============================================================================
     -- Punctuation Role Combos & Better Level Scaling
