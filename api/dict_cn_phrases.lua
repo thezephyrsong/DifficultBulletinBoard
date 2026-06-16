@@ -174,12 +174,19 @@ dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "来(%d)个", en = "need
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "来点DPS", en = "need some DPS" }
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "来个能拉人的", en = "need someone who can summon" }
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "有没有大佬带", en = "any pros to carry me?" }
-dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "死矿任务(%d)=(%d)", en = "Deadmines quest LFM (Need %2 more) " }
+
+-- Fix the clunky "Come N" translations to clean LFG phrases
+dict_cn_phrases[#dict_cn_phrases+1] = { cn = "来N", en = "need healer " }
+dict_cn_phrases[#dict_cn_phrases+1] = { cn = "来T", en = "need tank " }
+dict_cn_phrases[#dict_cn_phrases+1] = { cn = "来DPS", en = "need DPS " }
 
 -- Specific Custom Instance Callouts
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "新月来人", en = "Crescent Grove LFG" }
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "翡翠圣地开团", en = "Forming Emerald Sanctum" }
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "仇恨熔炉速刷", en = "Hateforge Quarry speedrun" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "死矿任务(%d)=(%d)", en = "Deadmines quest LFM (Need %2 more) " }
+-- Catch the complex dungeon group phrasing with clean spacing
+dict_cn_phrases[#dict_cn_phrases+1] = { cn = "诺莫瑞根任务队", en = "Gnomeregan quest group " }
 
 -- Hardcore specific warnings / requests
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "HC模式注意安全", en = "HC mode, play safe" }
