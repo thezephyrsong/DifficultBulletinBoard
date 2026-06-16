@@ -174,6 +174,7 @@ dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "来(%d)个", en = "need
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "来点DPS", en = "need some DPS" }
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "来个能拉人的", en = "need someone who can summon" }
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "有没有大佬带", en = "any pros to carry me?" }
+dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "死矿任务(%d)=(%d)", en = "Deadmines quest LFM (Need %2 more) " }
 
 -- Specific Custom Instance Callouts
 dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "新月来人", en = "Crescent Grove LFG" }
