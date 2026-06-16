@@ -53,6 +53,10 @@ dict_cn_misc = {
     ["黑石深渊"]   = "BRD",
     ["本通灵学院"] = "SCHOLO",
     ["斯坦索姆"]   = "STRAT",
+    ["STSM"]       = "STRAT",
+    ["速刷"]       = "speed clear",
+    ["速刷队"]     = "speed clear team",
+    ["MT"]         = "main tank",
     ["黑石塔下"]   = "LBRS",
     ["黑石塔上"]   = "UBRS",
     ["厄运之槌"]   = "DM",
@@ -261,4 +265,52 @@ dict_cn_misc = {
     ["吃饭"]       = "eating",
     ["睡觉"]       = "sleeping",
     ["上厕所"]     = "bathroom break",
+
+    -- Group composition
+    ["满5"]        = "full 5/5",
+    ["缺1"]        = "need 1 more",
+    ["缺2"]        = "need 2 more",
+    ["缺3"]        = "need 3 more",
+    ["缺4"]        = "need 4 more",
+
+    -- Role abbreviations
+    ["T"]          = "tank",
+    ["DPS位"]      = "DPS spot",
+    ["法系"]       = "caster DPS",
+    ["物理"]       = "melee DPS",
+
+    -- Dungeon abbreviations
+    ["ZNSY"]       = "ZA",
+    ["MLTD"]       = "MARA",
+    ["ZAM"]        = "ZA",
+    ["ZM"]         = "ZA",
+
+    -- Carry / lockout terms
+    ["带飞"]       = "carry run",
+    ["全程带"]     = "full carry",
+    ["自己有本"]   = "have lockout",
+    ["没本"]       = "no lockout",
+    ["地下城"]     = "dungeon",
+    ["本周"]       = "this week",
+    ["首领击杀"]   = "boss kill",
+
+    -- Time phrases
+    ["现在开"]     = "starting now",
+    ["马上开"]     = "starting soon",
+    ["几点"]       = "what time?",
+    ["几号开"]     = "what time starting?",
+
+    -- GDKP / payment terms
+    ["底价"]       = "minimum bid",
+    ["一口价"]     = "buyout price",
+    ["分钱"]       = "split gold",
+    ["保底"]       = "guaranteed payout",
+}
+
+
+    -- Additional LFG terms
+    ["北都"]       = "LBRS",
+    ["南都"]       = "UBRS",
+    ["任务队"]     = "quest group",
+    ["来个"]       = "need a",
 }

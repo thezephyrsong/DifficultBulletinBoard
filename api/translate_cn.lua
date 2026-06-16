@@ -59,6 +59,13 @@ local function apply_phrases(text)
     end
     i = i + 1
   end
+  -- Group composition: X=Y means "X have joined, need Y more", total = X+Y
+  -- e.g. "3=2" -> "need 2 more (3/5)"
+  text = string_gsub(text, "(%d+)=(%d+)", function(a, b)
+    local have = tonumber(a) or 0
+    local need = tonumber(b) or 0
+    return "need " .. need .. " more (" .. have .. "/" .. (have + need) .. ")"
+  end)
   return text
 end
 
