@@ -28,6 +28,26 @@ dict_cn_phrases = {
     { cn = "%f[%w]6%f[%W]",        en = "nice" },            -- Matches standalone "6", leaves "60+" perfectly safe
     { cn = "%f[%a][nN][dD]%f[%A]", en = "Resto Druid" },     -- Only matches standalone "nd" / "ND"
     { cn = "%f[%a][sS][tT]%f[%A]", en = "Sunken Temple " },  -- Only matches standalone "st" / "ST"
+    -- ============================================================================
+    -- Air-Tight Standalone Guard Rules (Protects system text and English sentences)
+    -- ============================================================================
+    { cn = "%f[%a][sS][sS]%f[%A]", en = "Warlock" },
+    { cn = "%f[%a][sS][mM]%f[%A]", en = "Shaman" },
+    { cn = "%f[%a][aA][mM]%f[%A]", en = "Shadow Priest" },
+    { cn = "%f[%a][nN][dD]%f[%A]", en = "Resto Druid" },
+    { cn = "%f[%a][hH][cC]%f[%A]", en = "Hardcore" },
+    { cn = "%f[%a][eE][yY]%f[%A]", en = "Dire Maul" },
+    { cn = "%f[%a][iI][fF]%f[%A]", en = "Ironforge" },
+    { cn = "%f[%a][mM][cC]%f[%A]", en = "Molten Core" },
+    { cn = "%f[%a][aA][bB]%f[%A]", en = "Arathi Basin" },
+    { cn = "%f[%a][aA][vV]%f[%A]", en = "Alterac Valley" },
+    { cn = "%f[%a][sS][wW]%f[%A]", en = "Stormwind" },
+    { cn = "%f[%a][uU][cC]%f[%A]", en = "Undercity" },
+    { cn = "%f[%a][oO][rR][gG]%f[%A]", en = "Orgrimmar" },
+    { cn = "%f[%a][tT][lL]%f[%A]", en = "Scholomance" },
+    { cn = "%f[%a][yY][sS]%f[%A]", en = "need water" },
+    { cn = "%f[%a][fF][sS]%f[%A]", en = "Mage" },
+    { cn = "%f[%a][lL][rR]%f[%A]", en = "Hunter" },
 
     -- ============================================================================
     -- Advanced LFG Role Combos & Verbs
