@@ -26,7 +26,8 @@ dict_cn_phrases = {
     { cn = "(%d+)[gG]%f[%W]",      en = "%1 Gold" },         -- Formats gold safely (e.g., 20g -> 20 Gold)
     { cn = "%f[%a][aA][hH]%f[%A]", en = "WC" },              -- Only swaps "AH" if it's a standalone group tag
     { cn = "%f[%w]6%f[%W]",        en = "nice" },            -- Matches standalone "6", leaves "60+" perfectly safe
-    { cn = "%f[%a][nN][dD]%f[%A]", en = "Resto Druid" },  -- Only matches standalone "nd" / "ND"
+    { cn = "%f[%a][nN][dD]%f[%A]", en = "Resto Druid" },     -- Only matches standalone "nd" / "ND"
+    { cn = "%f[%a][sS][tT]%f[%A]", en = "Sunken Temple " },  -- Only matches standalone "st" / "ST"
 
     -- ============================================================================
     -- Advanced LFG Role Combos & Verbs
