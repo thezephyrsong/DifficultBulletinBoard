@@ -99,6 +99,41 @@ dict_cn_phrases = {
     { cn = "强力奶",      en = "strong Healer" },
 
     -- ============================================================================
+    -- High-Level & Inferno Progression Farming Callouts
+    -- ============================================================================
+    { cn = "黑下宝钻",       en = "LBRS Diamond farm " },
+    { cn = "刷装备",         en = "gear farm " },
+    { cn = "炼狱饰品",       en = "Inferno trinket " },
+    { cn = "第一步",         en = "step 1 " },
+    { cn = "打信",           en = "farming quest drop " },
+    { cn = "已开工",         en = "run in progress " },
+    { cn = "能拉",           en = "can summon " },
+    { cn = "55%+即可",       en = "lvl 55+ welcome " },
+
+    -- ============================================================================
+    -- Homophone & Slang Dungeon Fixes (Fixes "Noob Market" typo)
+    -- ============================================================================
+    { cn = "菜市场",         en = "Hateforge Quarry " }, -- Catches the caishichang typo for 采石场
+    { cn = "NY任务队",       en = "RFC quest group " },  -- Stops NY from squishing into text
+    { cn = "外围也做",       en = "doing outer quests too " },
+    { cn = "YY任务队",       en = "SFK quest group " },
+    { cn = "强T带队",       en = "strong Tank leading group " },
+    { cn = "各种",           en = "all roles " },
+
+    -- ============================================================================
+    -- Punctuation Role Combos & Better Level Scaling
+    -- ============================================================================
+    { cn = "来[tT]%.[dD]",   en = "need Tank and DPS " }, -- Catches punctuated "T.D" styles cleanly
+    { cn = "来(%d+)%+",      en = "need lvl %1+ " },      -- Converts "来52+" into "need lvl 52+" instead of "to 52+"
+
+    -- ============================================================================
+    -- Profession Material & Trade Phrasing (Fixes "Middle-Skinned People")
+    -- ============================================================================
+    { cn = "收中皮",         en = "WTB Medium Leather " },
+    { cn = "一组",           en = "1 stack " },
+    { cn = "人在幽暗",       en = "currently in Undercity " },
+
+    -- ============================================================================
     -- Original Base Phrases & Movements
     -- ============================================================================
     { cn = "开门",         en = "Open the door" },
