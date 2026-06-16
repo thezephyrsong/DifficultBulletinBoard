@@ -17,6 +17,11 @@ dict_cn_phrases = {
     { cn = "死矿任务(%d)=(%d)", en = "Deadmines quest LFM (Need %2 more) " },
     { cn = "死矿任务队",     en = "Deadmines quest group " },
     { cn = "剃刀高地来人", en = "Razorfen Downs LFM, " },
+    { cn = "新月小树林任务队", en = "Crescent Grove quest group " },
+    { cn = "诺莫瑞根任务队",   en = "Gnomeregan quest group " },
+    { cn = "监狱任务队",       en = "Stockades quest group " },
+    { cn = "霜鬃谷任务队",     en = "Frostmane Hollow quest group " },
+    { cn = "死矿任务队",       en = "Deadmines quest group " },
 
     -- ============================================================================
     -- Standalone English / Number Guard Rules (Protects words from corruption)
@@ -82,7 +87,8 @@ dict_cn_phrases = {
     { cn = "%f[%a][tT][nN]%f[%A]", en = "Tank/Healer" },
     { cn = "来[tT][dD][nN]",   en = "need Tank, DPS, Healer " },
     { cn = "来[tT][nN][dD]",   en = "need Tank, Healer, DPS " },
-
+    { cn = "任务队",           en = "quest group " },
+ 
     -- ============================================================================
     -- Base LFG Role Requests
     -- ============================================================================
@@ -93,12 +99,13 @@ dict_cn_phrases = {
     { cn = "来个T",        en = "need a tank" },
     { cn = "来个DPS",      en = "need a DPS" },
     { cn = "来个奶",       en = "need a healer" },
-    { cn = "来T",          en = "need tank " },
-    { cn = "来N",          en = "need healer " },
-    { cn = "来DPS",        en = "need dps " },
+    { cn = "来[nN]",         en = "need Healer " },
+    { cn = "来[tT]",         en = "need Tank " },
+    { cn = "来[dD][pP][sS]", en = "need DPS " },
     { cn = "强力T",       en = "strong Tank" },
     { cn = "强力N",       en = "strong Healer" },
     { cn = "强力奶",      en = "strong Healer" },
+
 
     -- ============================================================================
     -- High-Level & Inferno Progression Farming Callouts
@@ -115,6 +122,7 @@ dict_cn_phrases = {
     -- ============================================================================
     -- Homophone & Slang Dungeon Fixes (Fixes "Noob Market" typo)
     -- ============================================================================
+    { cn = "新月小树林",       en = "Crescent Grove " },
     { cn = "菜市场",         en = "Hateforge Quarry " }, -- Catches the caishichang typo for 采石场
     { cn = "NY任务队",       en = "RFC quest group " },  -- Stops NY from squishing into text
     { cn = "外围也做",       en = "doing outer quests too " },
