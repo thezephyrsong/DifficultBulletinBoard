@@ -15,6 +15,7 @@ dict_cn_phrases = {
     { cn = "翡翠圣地开团",   en = "Forming Emerald Sanctum" },
     { cn = "仇恨熔炉速刷",   en = "Hateforge Quarry speedrun" },
     { cn = "死矿任务(%d)=(%d)", en = "Deadmines quest LFM (Need %2 more) " },
+    { cn = "死矿任务队",     en = "Deadmines quest group " },
 
     -- ============================================================================
     -- Standalone English / Number Guard Rules (Protects words from corruption)
@@ -28,6 +29,7 @@ dict_cn_phrases = {
     { cn = "%f[%w]6%f[%W]",        en = "nice" },            -- Matches standalone "6", leaves "60+" perfectly safe
     { cn = "%f[%a][nN][dD]%f[%A]", en = "Resto Druid" },     -- Only matches standalone "nd" / "ND"
     { cn = "%f[%a][sS][tT]%f[%A]", en = "Sunken Temple " },  -- Only matches standalone "st" / "ST"
+
     -- ============================================================================
     -- Air-Tight Standalone Guard Rules (Protects system text and English sentences)
     -- ============================================================================
@@ -68,6 +70,8 @@ dict_cn_phrases = {
     { cn = "来个能拉人的",    en = "need someone who can summon" },
     { cn = "有没有大佬带",    en = "any pros to carry me?" },
     { cn = "来(%d)个",        en = "need %1 more" },
+    { cn = "来T来奶",        en = "need Tank and Healer " },
+    { cn = "来奶",           en = "need healer " },
 
     -- ============================================================================
     -- Base LFG Role Requests
