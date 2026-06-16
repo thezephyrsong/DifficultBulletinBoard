@@ -55,7 +55,12 @@ local function apply_phrases(text)
   while i <= table_getn(dict_cn_phrases) do
     local rule = dict_cn_phrases[i]
     if rule.cn and rule.en then
-      text = string_gsub(text, rule.cn, rule.en)
+      local replacement = rule.en
+      -- Automatically append a trailing space if one doesn't exist
+      if type(replacement) == "string" and string_sub(replacement, -1) ~= " " then
+        replacement = replacement .. " "
+      end
+      text = string_gsub(text, rule.cn, replacement)
     end
     i = i + 1
   end
@@ -64,7 +69,7 @@ local function apply_phrases(text)
   text = string_gsub(text, "(%d+)=(%d+)", function(a, b)
     local have = tonumber(a) or 0
     local need = tonumber(b) or 0
-    return "need " .. need .. " more (" .. have .. "/" .. (have + need) .. ")"
+    return "need " .. need .. " more (" .. have .. "/" .. (have + need) .. ") "
   end)
   return text
 end
@@ -122,7 +127,12 @@ local function apply_misc(text)
             j = j + 1
           end
           if slice == entry.cn then
-            table_insert(out, entry.en)
+            local translation = entry.en
+            -- Automatically append a trailing space if one doesn't exist
+            if string_sub(translation, -1) ~= " " then
+              translation = translation .. " "
+            end
+            table_insert(out, translation)
             i = i + klen
             matched = true
             break
@@ -154,5 +164,14 @@ function DBB2.api.TranslateCN(message)
   end
   local result = apply_phrases(message)
   result = apply_misc(result)
+
+  -- =====================================================
+  -- POST-TRANSLATION CLEANUP (Self-Healing Space Engine)
+  -- =====================================================
+  -- 1. Collapse duplicate multi-spaces created by back-to-back words into single spaces
+  result = string_gsub(result, "%s+", " ")
+  -- 2. Strip any trailing whitespaces off the absolute end of the sentence
+  result = string_gsub(result, "%s+$", "")
+
   return result
 end

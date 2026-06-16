@@ -16,6 +16,7 @@ dict_cn_phrases = {
     { cn = "仇恨熔炉速刷",   en = "Hateforge Quarry speedrun" },
     { cn = "死矿任务(%d)=(%d)", en = "Deadmines quest LFM (Need %2 more) " },
     { cn = "死矿任务队",     en = "Deadmines quest group " },
+    { cn = "剃刀高地来人", en = "Razorfen Downs LFM, " },
 
     -- ============================================================================
     -- Standalone English / Number Guard Rules (Protects words from corruption)
@@ -54,6 +55,10 @@ dict_cn_phrases = {
     -- ============================================================================
     -- Advanced LFG Role Combos & Verbs
     -- ============================================================================
+    { cn = "来[nN]%s?=%s?(%d+)", en = "LF%1M Healer " },
+    { cn = "来[tT]%s?=%s?(%d+)", en = "LF%1M Tank " },
+    { cn = "来[dD][pP][sS]%s?=%s?(%d+)", en = "LF%1M DPS " },
+    { cn = "来[mM][sS]%s?=%s?(%d+)", en = "LF%1M Healer " }, -- Catching shorthand 'MS' (Priest/Healer)
     { cn = "需来个DPS或者奶", en = "need DPS or healer" },
     { cn = "需来个T或者奶",   en = "need tank or healer" },
     { cn = "需来个T",         en = "need a tank" },
@@ -72,6 +77,9 @@ dict_cn_phrases = {
     { cn = "来(%d)个",        en = "need %1 more" },
     { cn = "来T来奶",        en = "need Tank and Healer " },
     { cn = "来奶",           en = "need healer " },
+    { cn = "来[tT]%s?[nN]", en = "need Tank and Healer " },
+    { cn = "来[nN]%s?[tT]", en = "need Healer and Tank " },
+    { cn = "%f[%a][tT][nN]%f[%A]", en = "Tank/Healer" }, -- dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "%f[%a][nN][tT]%f[%A]", en = "Healer/Tank" } --[cite: 4]
 
     -- ============================================================================
     -- Base LFG Role Requests
@@ -86,6 +94,9 @@ dict_cn_phrases = {
     { cn = "来T",          en = "need tank " },
     { cn = "来N",          en = "need healer " },
     { cn = "来DPS",        en = "need dps " },
+    { cn = "强力T",       en = "strong Tank" },
+    { cn = "强力N",       en = "strong Healer" },
+    { cn = "强力奶",      en = "strong Healer" },
 
     -- ============================================================================
     -- Original Base Phrases & Movements
