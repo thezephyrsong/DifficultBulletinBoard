@@ -899,6 +899,7 @@ dict_cn_misc["巨人合剂"] = "Flask of Supreme Power"
 dict_cn_misc["精灵合剂"] = "Flask of Distilled Wisdom"
 dict_cn_misc["黑莲花"] = "Black Lotus"
 dict_cn_misc["火焰之油"] = "Fire Oil"
+dict_cn_misc["符文布"] = "Runecloth"
 
 -- ============================================================================
 -- Economics, Bidding, GDKP & Auction House

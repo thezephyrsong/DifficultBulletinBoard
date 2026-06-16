@@ -29,6 +29,25 @@ dict_cn_phrases = {
     { cn = "有锤子",         en = "ZF Hammer ready " },
 
     -- ============================================================================
+    -- Open-World Elite Quests & Hinterlands Specifics
+    -- ============================================================================
+    { cn = "辛特兰",         en = "Hinterlands " },
+    { cn = "JY任务",         en = "Elite quests " },
+    { cn = "来的[mM]",       en = "PST to join " },
+    { cn = "另收",           en = "Also buying " },
+
+    -- ============================================================================
+    -- LFG Question Formats & Spacing Fixes
+    -- ============================================================================
+    { cn = "有没有死矿队伍啊", en = "Any Deadmines group? " },
+    { cn = "有没有死矿队伍",   en = "Any Deadmines group " },
+    
+    -- Universal question fallbacks (handles any dungeon variant)
+    { cn = "有没有",           en = "Any " },
+    { cn = "队伍啊",           en = "group? " },
+    { cn = "队伍",             en = "group " },
+
+    -- ============================================================================
     -- Standalone English / Number Guard Rules (Protects words from corruption)
     -- ============================================================================
     { cn = "%f[%a][eE][sS]%f[%A]", en = "Emerald Sanctum" }, -- Only matches standalone "es" / "ES"
@@ -288,6 +307,10 @@ dict_cn_phrases = {
     { cn = "HC模式注意安全", en = "HC mode, play safe" },
     { cn = "别引怪会害死人", en = "Don't ninja pull, you'll kill us" },
     { cn = "求稳不要求快",   en = "Safety first, don't rush" },
+    { cn = "珠宝大师",       en = "Zhubao (Master Crafter) " },
+    { cn = "珠宝商人",       en = "Zhubao (Merchant) " },
+    { cn = "一个珠宝",       en = "one Zhubao " },
+    { cn = "少了一个珠宝",   en = "one less Zhubao " },
 
     -- ============================================================================
     -- Economy & Strategic Warnings
