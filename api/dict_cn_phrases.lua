@@ -27,6 +27,8 @@ dict_cn_phrases = {
     { cn = "来[tT]和[nN]",   en = "need Tank and Healer " },
     { cn = "来[tT]和[dD]",   en = "need Tank and DPS " },
     { cn = "有锤子",         en = "ZF Hammer ready " },
+    { cn = "龙吼任务队",       en = "Dragonmaw Retreat quest group " },
+    { cn = "龙吼",             en = "Dragonmaw Retreat " },
 
     -- ============================================================================
     -- Open-World Elite Quests & Hinterlands Specifics
@@ -112,6 +114,7 @@ dict_cn_phrases = {
     { cn = "来[tT][dD][nN]",   en = "need Tank, DPS, Healer " },
     { cn = "来[tT][nN][dD]",   en = "need Tank, Healer, DPS " },
     { cn = "任务队",           en = "quest group " },
+    { cn = "来[dD]%s+[nN]",   en = "need DPS and Healer " },
  
     -- ============================================================================
     -- Base LFG Role Requests
@@ -129,6 +132,7 @@ dict_cn_phrases = {
     { cn = "强力T",       en = "strong Tank" },
     { cn = "强力N",       en = "strong Healer" },
     { cn = "强力奶",      en = "strong Healer" },
+    { cn = "来的[mM]+",        en = "PST " },
 
 
     -- ============================================================================
