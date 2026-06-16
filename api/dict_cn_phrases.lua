@@ -79,7 +79,9 @@ dict_cn_phrases = {
     { cn = "来奶",           en = "need healer " },
     { cn = "来[tT]%s?[nN]", en = "need Tank and Healer " },
     { cn = "来[nN]%s?[tT]", en = "need Healer and Tank " },
-    { cn = "%f[%a][tT][nN]%f[%A]", en = "Tank/Healer" }, -- dict_cn_phrases[table.getn(dict_cn_phrases)+1] = { cn = "%f[%a][nN][tT]%f[%A]", en = "Healer/Tank" } --[cite: 4]
+    { cn = "%f[%a][tT][nN]%f[%A]", en = "Tank/Healer" },
+    { cn = "来[tT][dD][nN]",   en = "need Tank, DPS, Healer " },
+    { cn = "来[tT][nN][dD]",   en = "need Tank, Healer, DPS " },
 
     -- ============================================================================
     -- Base LFG Role Requests
@@ -119,6 +121,7 @@ dict_cn_phrases = {
     { cn = "YY任务队",       en = "SFK quest group " },
     { cn = "强T带队",       en = "strong Tank leading group " },
     { cn = "各种",           en = "all roles " },
+    { cn = "新月小树林任务队", en = "Crescent Grove quest group " },
 
     -- ============================================================================
     -- Punctuation Role Combos & Better Level Scaling
