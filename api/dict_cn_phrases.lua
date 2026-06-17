@@ -36,6 +36,7 @@ dict_cn_phrases = {
     -- Open-World Elite Quests & Hinterlands Specifics
     -- ============================================================================
     { cn = "辛特兰",         en = "Hinterlands " },
+    { cn = "辛特兰JY",         en = "Hinterlands Elite quests " },
     { cn = "JY任务",         en = "Elite quests " },
     { cn = "来的[mM]",       en = "PST to join " },
     { cn = "另收",           en = "Also buying " },
@@ -120,6 +121,7 @@ dict_cn_phrases = {
     { cn = "来[tT]%s+[nN]%s?=%s?(%d+)", en = "LF%1M (Tank + Healer) " },
     { cn = "来[nN]%s+[tT]%s?=%s?(%d+)", en = "LF%1M (Healer + Tank) " },
     { cn = "来[dD]%s+[nN]%s?=%s?(%d+)", en = "LF%1M (DPS + Healer) " },
+    { cn = "3BB护驾",          en = "3 party spots open " },
  
     -- ============================================================================
     -- Base LFG Role Requests
@@ -151,6 +153,7 @@ dict_cn_phrases = {
     { cn = "打信",           en = "farming quest drop " },
     { cn = "已开工",         en = "run in progress " },
     { cn = "能拉",           en = "can summon " },
+    { cn = "可以拉",         en = "can summon " },
     { cn = "55%+即可",       en = "lvl 55+ welcome " },
 
     -- ============================================================================
