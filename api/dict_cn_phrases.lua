@@ -12,6 +12,8 @@ dict_cn_phrases = {
     { cn = "监狱任务队",     en = "Stockades quest group " },
     { cn = "霜鬃谷任务队",   en = "Frostmane Hollow quest group " },
     { cn = "新月来人",       en = "Crescent Grove LFG" },
+    { cn = "小树林来TND",      en = "Crescent Grove need Tank, Healer, DPS " },
+    { cn = "小树林",           en = "Crescent Grove " },
     { cn = "翡翠圣地开团",   en = "Forming Emerald Sanctum" },
     { cn = "仇恨熔炉速刷",   en = "Hateforge Quarry speedrun" },
     { cn = "死矿任务(%d)=(%d)", en = "Deadmines quest LFM (Need %2 more) " },
