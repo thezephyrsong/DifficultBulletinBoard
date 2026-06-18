@@ -33,6 +33,9 @@ dict_cn_phrases = {
     { cn = "龙吼",             en = "Dragonmaw Retreat " },
     { cn = "黑上全通",       en = "UBRS full run " },
     { cn = "许愿%+1",        en = "SR+1 " }, -- Note the '%' to escape the magic '+' character
+{ cn = "新月小树林", en = "Crescent Grove" },  -- already have it but no "CG" abbreviation guard
+{ cn = "霜鬃", en = "Frostmane Hollow" },       -- FH not covered
+{ cn = "仇恨采石场", en = "Hateforge Quarry" }, -- HQ not covered
 
     -- ============================================================================
     -- Open-World Elite Quests & Hinterlands Specifics
@@ -87,6 +90,10 @@ dict_cn_phrases = {
     { cn = "%f[%a][yY][sS]%f[%A]", en = "need water" },
     { cn = "%f[%a][fF][sS]%f[%A]", en = "Mage" },
     { cn = "%f[%a][lL][rR]%f[%A]", en = "Hunter" },
+    { cn = "%f[%a][mM][nN]%f[%A]", en = "Main Healer" },   -- standalone "mn"/"MN" only
+    { cn = "%f[%a][fF][nN]%f[%A]", en = "Off Healer" },    -- standalone "fn"/"FN" only
+    { cn = "%f[%a][dD][dD]%f[%A]", en = "DPS" },           -- standalone "dd"/"DD" only
+    { cn = "%f[%a][oO][kK]%f[%A]", en = "OK" },            -- standalone "ok"/"OK" only
 
     -- ============================================================================
     -- Advanced LFG Role Combos & Verbs
@@ -143,6 +150,20 @@ dict_cn_phrases = {
     { cn = "强力奶",      en = "strong Healer" },
     { cn = "来的[mM]+",        en = "PST " },
     { cn = "全通",           en = "full run " },
+{ cn = "拉人", en = "summoning" },
+{ cn = "没有传送", en = "no warlock for summon" },{ cn = "缺奶", en = "need healer" },
+{ cn = "缺T", en = "need tank" },
+{ cn = "缺DPS", en = "need DPS" },
+{ cn = "奶满了", en = "healers full" },
+{ cn = "T满了", en = "tanks full" },
+{ cn = "满员了", en = "group full" },
+{ cn = "已满", en = "full" },
+{ cn = "消费团", en = "GDKP run" },   -- already in phrases but missing from misc
+{ cn = "点数团", en = "DKP run" },
+{ cn = "SR", en = "Soft Reserve" },
+{ cn = "软保", en = "Soft Reserve" },
+{ cn = "硬保", en = "Hard Reserve" },
+{ cn = "许愿", en = "Soft Reserve" }, -- you have SR+1 but not the base term
 
 
     -- ============================================================================
@@ -157,6 +178,10 @@ dict_cn_phrases = {
     { cn = "能拉",           en = "can summon " },
     { cn = "可以拉",         en = "can summon " },
     { cn = "55%+即可",       en = "lvl 55+ welcome " },
+{ cn = "HC队", en = "HC group" },
+{ cn = "HC专用", en = "HC only" },
+{ cn = "非HC勿扰", en = "HC players only, please" },
+{ cn = "HC新手", en = "HC newbie" },
 
     -- ============================================================================
     -- Homophone & Slang Dungeon Fixes (Fixes "Noob Market" typo)
@@ -186,12 +211,19 @@ dict_cn_phrases = {
     { cn = "收中皮",         en = "WTB Medium Leather " },
     { cn = "一组",           en = "1 stack " },
     { cn = "人在幽暗",       en = "currently in Undercity " },
+{ cn = "收材料", en = "WTB mats" },
+{ cn = "卖装备", en = "WTS gear" },
+{ cn = "收装备", en = "WTB gear" },
+{ cn = "出售", en = "WTS" },
+{ cn = "收购", en = "WTB" },
+{ cn = "私聊", en = "PST" },
+{ cn = "低价出", en = "selling cheap" },
+{ cn = "高价收", en = "buying at good price" },
+{ cn = "议价", en = "price negotiable" },
 
     -- ============================================================================
     -- Original Base Phrases & Movements
     -- ============================================================================
-    { cn = "开门",         en = "Open the door" },
-    { cn = "门开",         en = "Open the door" },
     { cn = "来的组我",     en = "group with me" },
     { cn = "一起刷",       en = "run together" },
     { cn = "组队",         en = "group up" },
@@ -205,50 +237,27 @@ dict_cn_phrases = {
     { cn = "我吃饱了",     en = "I'm full" },
     { cn = "或者",         en = "or" },
     { cn = "号",           en = "" },
+{ cn = "晚8", en = "8 pm" },
+{ cn = "晚9", en = "9 pm" },
+{ cn = "晚10", en = "10 pm" },
+{ cn = "下午", en = "afternoon" },
+{ cn = "明天", en = "tomorrow" },
+{ cn = "今晚", en = "tonight" },
+{ cn = "周末", en = "this weekend" },
 
     -- ============================================================================
     -- Tactical & Combat Callouts
     -- ============================================================================
     { cn = "全力输出",     en = "full DPS" },
-    { cn = "停止攻击",     en = "stop attacking" },
-    { cn = "不要攻击",     en = "don't attack" },
-    { cn = "打标记",       en = "mark the target" },
-    { cn = "集火",         en = "focus fire" },
-    { cn = "打星星",       en = "attack star" },
-    { cn = "先杀",         en = "kill first" },
-    { cn = "放技能",       en = "use cooldowns" },
-    { cn = "别乱打",       en = "don't pull aggro" },
-    { cn = "等我拉",       en = "wait for pull" },
-    { cn = "我来拉",       en = "I'll pull" },
-    { cn = "注意仇恨",     en = "watch your threat" },
-    { cn = "躲开",         en = "get out of it" },
-    { cn = "散开",         en = "spread out" },
-    { cn = "站好位",       en = "get in position" },
-    { cn = "站远点",       en = "stand back" },
-    { cn = "近战站我身边", en = "melee stay close to me" },
-    { cn = "我死了",       en = "I'm dead" },
-    { cn = "我快死了",     en = "I'm almost dead" },
-    { cn = "加我血",       en = "heal me" },
-    { cn = "奶我",         en = "heal me" },
-    { cn = "救我",         en = "save me" },
-    { cn = "跑路",         en = "run away" },
     { cn = "全灭",         en = "wipe" },
     { cn = "推倒",         en = "boss down" },
-    { cn = "打完了",       en = "done fighting" },
+{ cn = "战士T", en = "Warrior tank" },
+{ cn = "圣骑T", en = "Paladin tank" },
+{ cn = "德鲁伊T", en = "Druid tank" },
+{ cn = "牧师奶", en = "Priest healer" },
+{ cn = "萨满奶", en = "Shaman healer" },
+{ cn = "德鲁伊奶", en = "Druid healer" },
 
-    -- ============================================================================
-    -- Ready Checks & Preparation
-    -- ============================================================================
-    { cn = "准备好了",     en = "ready" },
-    { cn = "还没准备好",   en = "not ready yet" },
-    { cn = "都准备好了吗", en = "is everyone ready?" },
-    { cn = "等一下",       en = "wait a moment" },
-    { cn = "稍等",         en = "hold on" },
-    { cn = "先休息",       en = "rest first" },
-    { cn = "吃东西",       en = "eating" },
-    { cn = "加蓝",         en = "drinking" },
-    { cn = "补给",         en = "restock" },
-    { cn = "去卖东西",     en = "going to vendor" },
 
     -- ============================================================================
     -- General Social Status / Group Coordination
@@ -257,21 +266,7 @@ dict_cn_phrases = {
     { cn = "带我",         en = "carry me" },
     { cn = "有位置吗",     en = "any spots open?" },
     { cn = "还缺人吗",     en = "still need people?" },
-    { cn = "我可以来",     en = "I can join" },
-    { cn = "我来",         en = "I'll come" },
-    { cn = "开始吧",       en = "let's start" },
-    { cn = "走吧",         en = "let's go" },
-    { cn = "走了",         en = "let's go" },
-    { cn = "出发",         en = "move out" },
     { cn = "等人",         en = "waiting for people" },
-    { cn = "快来",         en = "hurry up" },
-    { cn = "在哪",         en = "where are you?" },
-    { cn = "你在哪",       en = "where are you?" },
-    { cn = "跟上",         en = "keep up" },
-    { cn = "跟我",         en = "follow me" },
-    { cn = "不去了",       en = "can't make it" },
-    { cn = "我要下线",     en = "I'm logging off" },
-    { cn = "下线了",       en = "logging off" },
 
     -- ============================================================================
     -- Loot Contexts & Trade
@@ -333,8 +328,4 @@ dict_cn_phrases = {
     { cn = "免费代工",     en = "Free crafting (your mats)" },
     { cn = "自带材料",     en = "Bring your own mats" },
     { cn = "代工做极品",   en = "Crafting high tier gear" },
-    { cn = "看好拉怪路线", en = "Watch the pull path" },
-    { cn = "治疗看好T",     en = "Healers focus the Tank" },
-    { cn = "DPS别抢仇恨",   en = "DPS wait for aggro" },
-    { cn = "各就各位",     en = "Everyone get in position" },
 }
