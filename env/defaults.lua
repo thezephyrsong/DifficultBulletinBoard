@@ -20,6 +20,7 @@ DBB2.env.defaultWhitelistedChannels = {
   "trade",           -- Sometimes used for LFG
   "general",         -- Zone general chat
   "hardcore",        -- Turtle WoW hardcore
+  "\228\184\150\231\149\140", -- Chinese "World" channel (世界)
 }
 
 -- Default channel monitoring settings (which channels are enabled for monitoring)
@@ -38,6 +39,7 @@ DBB2.env.defaultMonitoredChannels = {
   LookingForGroup = true,
   GuildRecruitment = false,
   World = true,
+  ["\228\184\150\231\149\140"] = true,  -- Chinese "World" channel (世界)
   -- Special
   Hardcore = true,  -- Will only work for hardcore characters
 }
@@ -52,7 +54,7 @@ DBB2.env.staticChannelOrder = {
 }
 
 -- Channels to auto-join if not already joined
-DBB2.env.autoJoinChannels = {"World", "LookingForGroup"}
+DBB2.env.autoJoinChannels = {"World", "LookingForGroup", "\228\184\150\231\149\140"}
 
 -- =====================
 -- BLACKLIST DEFAULTS

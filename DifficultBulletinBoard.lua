@@ -293,6 +293,7 @@ DBB2:SetScript("OnEvent", function()
       DBB2.api.SetChannelMonitored("LocalDefense", false)
       DBB2.api.SetChannelMonitored("WorldDefense", false)
       DBB2.api.SetChannelMonitored("GuildRecruitment", false)
+      DBB2.api.SetChannelMonitored("\228\184\150\231\149\140", false)
     end
     
     -- Rebuild channel config panel if it exists (updates states)
